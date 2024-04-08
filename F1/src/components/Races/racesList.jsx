@@ -1,11 +1,12 @@
-import RacesListItem from './racesListItem';
+import RacesListItem from './racesListItem'
 
 const RacesList = (props) => {
     return (
         <div>
-            <ul>
-                <RacesListItem/>
-            </ul>
+            <ol>
+            {props.racesData.map( (r,indx) => <RacesListItem
+            race={r} key={indx}/>)}
+            </ol>
         </div>
     )
 }

@@ -1,7 +1,9 @@
 const RacesListItem = (props) => {
     return (
         <li>
-            Item in List
+            <p>{props.race.name}</p>
+            <button>Results</button>
+            <button>Standings</button>
         </li>
     )
 }
