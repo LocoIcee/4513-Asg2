@@ -8,9 +8,9 @@ const StandingsView = (props) => {
             <h2>
                 Standings
             </h2>
-            <h1>
+            <h3>
                 After Round #
-            </h1>
+            </h3>
             <DriversList/>
             <ConstructorsList/>
         </div>

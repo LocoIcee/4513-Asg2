@@ -4,9 +4,9 @@ const CircuitView = (props) => {
             <h2>
                 Circuit Details
             </h2>
-            <h1>
+            <h3>
                 Name, location, country, url
-            </h1>
+            </h3>
             <button>
                 close
             </button>

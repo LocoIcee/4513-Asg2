@@ -25,7 +25,7 @@ const Header = (props) => {
     useEffect( () => {
         if( selectedYear != null){
             const url = `https://four513-asg1.onrender.com/api/races/season/${selectedYear}`;
-            console.log("fetching … here to check if I've gone infinite");
+            console.log("fetching season");
             fetch (url)
             .then( resp => resp.json() )
             .then( data => { props.seasonData(data);}) 

@@ -4,9 +4,9 @@ const ConstructorView = (props) => {
             <h2>
                 Constructor Details
             </h2>
-            <h1>
+            <h3>
                 Name, nationality, url
-            </h1>
+            </h3>
             <button>
                 close
             </button>

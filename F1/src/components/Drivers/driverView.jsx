@@ -4,9 +4,9 @@ const DriverView = (props) => {
             <h2>
                 Driver Details
             </h2>
-            <h1>
+            <h3>
                 Name, dob, nationality, url
-            </h1>
+            </h3>
             <button>
                 close
             </button>
