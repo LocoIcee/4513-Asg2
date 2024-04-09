@@ -10,10 +10,24 @@ const ConstructorsTable = (props) => {
             const url = `https://four513-asg1.onrender.com/api/standings/${props.raceId}/constructors`;
             console.log("fetching constructors");
             fetch (url)
-            .then( resp => resp.json() )
-            .then( data => { fillConstructors(data);}) 
+            .then( resp => {
+                if (resp.status === 404) {
+                    throw new Error('404 Not Found');
+                }
+                if (!resp.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return resp.json();
+            })
+            .then( data => { 
+                fillConstructors(data);})
             .catch(error => {
-                console.error('Error fetching constructors:', error);
+                
+                 console.error('Error fetching constructors:', error);
+                 
+                 if (error.message === '404 Not Found') {
+                     console.log('Constructor data not found');
+                 }
             });
         }
     }, [props.raceId]);

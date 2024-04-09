@@ -10,11 +10,25 @@ const ResultsTable = (props) => {
             const url = `https://four513-asg1.onrender.com/api/results/${props.raceId}`;
             console.log("fetching results");
             fetch (url)
-            .then( resp => resp.json() )
-            .then( data => { fillResults(data);})
+            .then( resp => {
+                if (resp.status === 404) {
+                    throw new Error('404 Not Found');
+                }
+                if (!resp.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return resp.json();
+            })
+            .then( data => { 
+                props.fillResults(data);})
             .catch(error => {
-                console.error('Error fetching results:', error);
-            }); 
+                
+                 console.error('Error fetching results:', error);
+                 
+                 if (error.message === '404 Not Found') {
+                     console.log('Results data not found');
+                 }
+            });
         }
     }, [props.raceId]);
 

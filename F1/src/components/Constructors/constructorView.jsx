@@ -8,10 +8,24 @@ const ConstructorView = (props) => {
             const url = `https://four513-asg1.onrender.com/api/drivers/${props.ConstructorRef}`;
             console.log("fetching driver");
             fetch (url)
-            .then( resp => resp.json() )
-            .then( data => { fillConstructor(data);})
+            .then( resp => {
+                if (resp.status === 404) {
+                    throw new Error('404 Not Found');
+                }
+                if (!resp.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return resp.json();
+            })
+            .then( data => { 
+                fillConstructor(data);})
             .catch(error => {
-                console.error('Error fetching Constructor:', error);
+                
+                 console.error('Error fetching constructor:', error);
+                 
+                 if (error.message === '404 Not Found') {
+                     console.log('Constructor data not found');
+                 }
             }); 
         }
     }, [props.driverRef]);

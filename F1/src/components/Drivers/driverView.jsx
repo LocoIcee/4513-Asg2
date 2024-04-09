@@ -10,9 +10,25 @@ const DriverView = (props) => {
             fetch (url)
             .then( resp => resp.json() )
             .then( data => { fillDriver(data);})
+            .then( resp => {
+                if (resp.status === 404) {
+                    throw new Error('404 Not Found');
+                }
+                if (!resp.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return resp.json();
+            })
+            .then( data => { 
+                fillDriver(data);})
             .catch(error => {
-                console.error('Error fetching driver:', error);
-            }); 
+                
+                 console.error('Error fetching Driver:', error);
+                 
+                 if (error.message === '404 Not Found') {
+                     console.log('Driver data not found');
+                 }
+            });
         }
     }, [props.driverRef]);
 
