@@ -1,7 +1,7 @@
 const LoginView = (props) => {
     return(
         <div>
-            <div class=" bg-[url('assets/jonathan-cosens-photography--at83Qidy7g-unsplash.jpg')] bg-no-repeat bg-cover flex flex-row min-h-screen justify-center items-center">
+            <div class=" bg-[url('assets/LoginBack1.jpg')] bg-no-repeat bg-cover flex flex-row min-h-screen justify-center items-center">
                 <div class=" bg-slate-100 border-4 border-spacing-x-52 border-black size-96">
                     <form>
                         <h2 class="flex justify-center font-mono font-bold text-2xl">
