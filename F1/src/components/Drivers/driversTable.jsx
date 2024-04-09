@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import DriversTableItem from './driverTableItem';
+import DriverView from '../Drivers/driverView';
 
 const DriversTable = (props) => {
 
@@ -31,31 +32,39 @@ const DriversTable = (props) => {
             });
         }
     }, [props.raceId]);
+    const [driverRef, fillDriverRef] = useState(null);
 
     return (
-        <div>
-            <h2>
-                Drivers
-            </h2>
-            {drivers != null ? (
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Pos</th>
-                            <th></th>
-                            <th>Pts</th>
-                            <th>Wins</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {drivers.sort((a,b) => a.position - b.position).map( (d,indx) => <DriversTableItem
-                        driver={d} key={indx}/>)}
-                    </tbody>
-                </table>
+        <>
+            <div>
+                <h2>
+                    Drivers
+                </h2>
+                {drivers != null ? (
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Pos</th>
+                                <th></th>
+                                <th>Pts</th>
+                                <th>Wins</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {drivers.sort((a,b) => a.position - b.position).map( (d,indx) => <DriversTableItem
+                            driver={d} key={indx} fillDriverRef={fillDriverRef}/>)}
+                        </tbody>
+                    </table>
+                ) : (
+                    <></>
+                )}
+            </div>
+            {driverRef != null ?(
+                <DriverView driverRef={driverRef} fillDriverRef={fillDriverRef}/>
             ) : (
                 <></>
             )}
-        </div>
+        </>
     )
 }
 export default DriversTable;

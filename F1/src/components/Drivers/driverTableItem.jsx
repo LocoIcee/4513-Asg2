@@ -5,7 +5,7 @@ const DriversTableItem = (props) => {
                 {props.driver.position}
             </td>
             <td>
-                {props.driver.drivers.forename} {props.driver.drivers.surname}
+                <a onClick={() => props.fillDriverRef(props.driver.drivers.driverRef)}>{props.driver.drivers.forename} {props.driver.drivers.surname}</a>
             </td>
             <td>
                 {props.driver.points}
