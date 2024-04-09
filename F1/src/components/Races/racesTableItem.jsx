@@ -8,13 +8,13 @@ const RacesTableItem = (props) => {
                 {props.race.name}
             </td>
             <td>
-                <button onClick={() => (props.getSingleRace(props.race), 
+                <button class="rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500" onClick={() => (props.getSingleRace(props.race), 
                     props.showResults(true), props.showStandings(false))}>
                         Results
                 </button>
             </td>
             <td>
-                <button onClick={() => (props.getSingleRace(props.race), 
+                <button class="rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500" onClick={() => (props.getSingleRace(props.race), 
                     props.showStandings(true), props.showResults(false))}>
                         Standings
                 </button>
