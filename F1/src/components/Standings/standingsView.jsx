@@ -1,5 +1,5 @@
-import ConstructorsList from '../Constructors/constructorsList';
-import DriversList from '../Drivers/driversList';
+import ConstructorsTable from '../Constructors/constructorsTable';
+import DriversTable from '../Drivers/driversTable';
 
 
 const StandingsView = (props) => {
@@ -9,10 +9,10 @@ const StandingsView = (props) => {
                 Standings
             </h2>
             <h3>
-                After Round #
+                After Round {props.race.round}
             </h3>
-            <DriversList/>
-            <ConstructorsList/>
+            <DriversTable raceId={props.race.raceId}/>
+            <ConstructorsTable raceId={props.race.raceId}/>
         </div>
     )
 }

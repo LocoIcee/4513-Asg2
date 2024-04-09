@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import CircuitView from './Circuit/circuitView';
 import ConstructorView from './Constructors/constructorView';
 import DriverView from './Drivers/driverView';
@@ -7,7 +8,7 @@ import LoginView from './Login/loginView';
 import RacesView from './Races/racesView';
 import ResultsView from './Results/resultsView';
 import StandingsView from './Standings/standingsView'
-import { useEffect, useState } from 'react';
+
 
 const PageView = (props) => {
 

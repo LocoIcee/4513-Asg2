@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import ResultsListItem from './resultsListItem';
+import ResultsTableItem from './resultsTableItem';
 
-const ResultsList = (props) => {
+const ResultsTable = (props) => {
 
     const [results, fillResults] = useState(null);
 
@@ -26,14 +26,26 @@ const ResultsList = (props) => {
                 
             <img src="image for 3rd"/>
             {results != null ?(
-                <ol>
-                    {results.sort((a,b) => a.position - b.position).map( (r,indx) => <ResultsListItem
-                            result={r} key={indx}/>)}
-                </ol>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Pos</td>
+                            <td></td>
+                            <td></td>
+                            <td>Laps</td>
+                            <td>Pts</td>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {results.sort((a,b) => a.position - b.position).map( (r,indx) => <ResultsTableItem
+                                result={r} key={indx}/>)}
+                    </tbody>
+                </table>
             ):(
                 <></>
             )}
         </div>
     )
 }
-export default ResultsList;
+export default ResultsTable;

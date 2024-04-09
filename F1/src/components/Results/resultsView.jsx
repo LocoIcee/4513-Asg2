@@ -1,5 +1,5 @@
-import ResultsList from './resultsList';
-import QualifyingList from '../Qualifying/qualifyingList';
+import ResultsTable from './resultsTable';
+import QualifyingTable from '../Qualifying/qualifyingTable';
 
 
 
@@ -13,8 +13,8 @@ const ResultsView = (props) =>{
             <h3>
                 {props.race.name}, Round #{props.race.round}, {props.race.year}, {props.race.date}, {props.race.url}
             </h3>
-            <QualifyingList raceId={props.race.raceId}/>
-            <ResultsList raceId={props.race.raceId}/>
+            <QualifyingTable raceId={props.race.raceId}/>
+            <ResultsTable raceId={props.race.raceId}/>
         </div>
     )
 }
