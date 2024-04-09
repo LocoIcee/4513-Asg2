@@ -28,6 +28,8 @@ const PageView = (props) => {
     }, [races])
 
     const [singleRace, getSingleRace] = useState(null);
+    const [viewResults, showResults] = useState(false);
+    const [viewStandings, showStandings] = useState(false);
 
 
 
@@ -41,11 +43,14 @@ const PageView = (props) => {
                     <Header seasonData={fillRaces}/>
                     {viewRaces ? (
                         <div>
-                            <RacesView racesData={races} getSingleRace={getSingleRace}/>
-                            {singleRace != null ? (
+                            <RacesView racesData={races} getSingleRace={getSingleRace}
+                            showResults={showResults} showStandings={showStandings}/>
+                            {viewResults ? (
                                 <ResultsView race={singleRace}/>
-                            ):(
-                                <StandingsView/>
+                            ): viewStandings ? (
+                                <StandingsView race={singleRace}/>
+                            ): (
+                                <></>
                             )}
                         </div>
                     ):(

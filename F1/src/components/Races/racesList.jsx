@@ -5,7 +5,8 @@ const RacesList = (props) => {
         <div>
             <ol>
             {props.racesData.map( (r,indx) => <RacesListItem
-            race={r} key={indx} getSingleRace={props.getSingleRace}/>)}
+            race={r} key={indx} getSingleRace={props.getSingleRace} 
+            showResults={props.showResults} showStandings={props.showStandings}/>)}
             </ol>
         </div>
     )

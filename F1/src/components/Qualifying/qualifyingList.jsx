@@ -22,11 +22,12 @@ const QualifyingList = (props) => {
             </h2>
             {qualifying != null ? (
                 <ol>
-                    {qualifying.map( (q,indx) => <QualifyingListItem
+                    {qualifying.sort((a,b) => a.position - b.position).map( (q,indx) => <QualifyingListItem
                     qualify={q} key={indx}/>)}
-                </ol>) : (
-                    <></>
-                )}
+                </ol>
+            ) : (
+                <></>
+            )}
         </div>
     )
 }
