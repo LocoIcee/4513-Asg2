@@ -1,4 +1,4 @@
-import RacesTableItem from './racesListItem'
+import RacesTableItem from './racesTableItem'
 
 const RacesTable = (props) => {
     return (

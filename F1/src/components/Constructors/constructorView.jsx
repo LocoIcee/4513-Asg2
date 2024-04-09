@@ -1,20 +1,44 @@
+import { useEffect, useState } from 'react';
+
 const ConstructorView = (props) => {
+    const [constructor, fillConstructor] = useState(null);
+
+    useEffect(() => {
+        if (props.ConstructorRef != null){
+            const url = `https://four513-asg1.onrender.com/api/drivers/${props.ConstructorRef}`;
+            console.log("fetching driver");
+            fetch (url)
+            .then( resp => resp.json() )
+            .then( data => { fillConstructor(data);})
+            .catch(error => {
+                console.error('Error fetching Constructor:', error);
+            }); 
+        }
+    }, [props.driverRef]);
+
     return(
-        <div>
-            <h2>
-                Constructor Details
-            </h2>
-            <h3>
-                Name, nationality, url
-            </h3>
-            <button>
-                close
-            </button>
-            <button>
-                Add Favorites
-            </button>
-            <img src="constructor image"/>
-        </div>
+        <>
+            {constructor != null ? (
+                <div>
+                    <h2>
+                        Constructor Details
+                    </h2>
+                    <h3>
+                        {constructor.name}, {constructor.nationality}, 
+                        {constructor.url}
+                    </h3>
+                    <button>
+                        close
+                    </button>
+                    <button>
+                        Add Favorites
+                    </button>
+                    <img src="driver image"/>
+                </div>
+            ) : (
+                <></>
+            )}
+        </>
     )
 }
 export default ConstructorView;

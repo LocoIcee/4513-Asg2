@@ -8,10 +8,13 @@ const ConstructorsTable = (props) => {
     useEffect(() => {
         if (props.raceId != null){
             const url = `https://four513-asg1.onrender.com/api/standings/${props.raceId}/constructors`;
-            console.log("fetching qualifying");
+            console.log("fetching constructors");
             fetch (url)
             .then( resp => resp.json() )
             .then( data => { fillConstructors(data);}) 
+            .catch(error => {
+                console.error('Error fetching constructors:', error);
+            });
         }
     }, [props.raceId]);
 

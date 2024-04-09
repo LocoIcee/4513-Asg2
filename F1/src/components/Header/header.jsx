@@ -28,7 +28,10 @@ const Header = (props) => {
             console.log("fetching season");
             fetch (url)
             .then( resp => resp.json() )
-            .then( data => { props.seasonData(data);}) 
+            .then( data => { props.seasonData(data);})
+            .catch(error => {
+                console.error('Error fetching season:', error);
+            });
         }
     }, [selectedYear] );
 

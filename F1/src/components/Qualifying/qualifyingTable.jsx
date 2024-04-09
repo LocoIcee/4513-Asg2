@@ -12,6 +12,9 @@ const QualifyingTable = (props) => {
             fetch (url)
             .then( resp => resp.json() )
             .then( data => { fillQualify(data);}) 
+            .catch(error => {
+                console.error('Error fetching qualifying:', error);
+            });
         }
     }, [props.raceId]);
 

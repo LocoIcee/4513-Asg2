@@ -8,10 +8,13 @@ const DriversTable = (props) => {
     useEffect(() => {
         if (props.raceId != null){
             const url = `https://four513-asg1.onrender.com/api/standings/${props.raceId}/drivers`;
-            console.log("fetching qualifying");
+            console.log("fetching drivers");
             fetch (url)
             .then( resp => resp.json() )
-            .then( data => { fillDrivers(data);}) 
+            .then( data => { fillDrivers(data);})
+            .catch(error => {
+                console.error('Error fetching drivers:', error);
+            }); 
         }
     }, [props.raceId]);
 

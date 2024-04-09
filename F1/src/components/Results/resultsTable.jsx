@@ -11,7 +11,10 @@ const ResultsTable = (props) => {
             console.log("fetching results");
             fetch (url)
             .then( resp => resp.json() )
-            .then( data => { fillResults(data);}) 
+            .then( data => { fillResults(data);})
+            .catch(error => {
+                console.error('Error fetching results:', error);
+            }); 
         }
     }, [props.raceId]);
 

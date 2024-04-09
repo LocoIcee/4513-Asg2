@@ -1,4 +1,4 @@
-import RacesTable from './racesList'
+import RacesTable from './racesTable'
 
 const RacesView = (props) => {
     return (
