@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import QualifyingTableItem from './qualifyingTableItem';
+import DriverView from '../Drivers/driverView';
 
 const QualifyingTable = (props) => {
 
@@ -32,32 +33,42 @@ const QualifyingTable = (props) => {
         }
     }, [props.raceId]);
 
+    const [driverRef, fillDriverRef] = useState(null);
+
     return (
-        <div>
-            <h2>
-                Qualifying
-            </h2>
-            {qualifying != null ? (
-                <table>
-                    <thead class="text-left bg-slate-50"> 
-                        <tr>
-                            <th>Pos</th>
-                            <th></th>
-                            <th></th>
-                            <th>Q1</th>
-                            <th>Q2</th>
-                            <th>Q3</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {qualifying.sort((a,b) => a.position - b.position).map( (q,indx) => <QualifyingTableItem
-                        qualify={q} key={indx}/>)}
-                    </tbody>
-                </table>
+        <>
+            <div>
+                <h2>
+                    Qualifying
+                </h2>
+                {qualifying != null ? (
+                    <table>
+                        <thead class="text-left bg-slate-50"> 
+                            <tr>
+                                <th>Pos</th>
+                                <th></th>
+                                <th></th>
+                                <th>Q1</th>
+                                <th>Q2</th>
+                                <th>Q3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {qualifying.sort((a,b) => a.position - b.position).map( (q,indx) => <QualifyingTableItem
+                            qualify={q} key={indx} fillDriverRef={fillDriverRef}/>)}
+                        </tbody>
+                    </table>
+                ) : (
+                    <></>
+                )}
+                
+            </div>
+            {driverRef != null ?(
+                <DriverView driverRef={driverRef}/>
             ) : (
                 <></>
             )}
-        </div>
+        </>
     )
 }
 export default QualifyingTable;

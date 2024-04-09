@@ -8,8 +8,6 @@ const DriverView = (props) => {
             const url = `https://four513-asg1.onrender.com/api/drivers/${props.driverRef}`;
             console.log("fetching driver");
             fetch (url)
-            .then( resp => resp.json() )
-            .then( data => { fillDriver(data);})
             .then( resp => {
                 if (resp.status === 404) {
                     throw new Error('404 Not Found');
