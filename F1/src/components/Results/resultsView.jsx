@@ -1,7 +1,6 @@
 import ResultsList from './resultsList';
 import QualifyingList from '../Qualifying/qualifyingList';
 import { useState, useEffect } from 'react';
-import res from 'express/lib/response';
 
 
 
