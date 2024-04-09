@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import ResultsTableItem from './resultsTableItem';
+import DriverView from '../Drivers/driverView';
 
 const ResultsTable = (props) => {
 
@@ -32,37 +33,46 @@ const ResultsTable = (props) => {
         }
     }, [props.raceId]);
 
+    const [driverRef, fillDriverRef] = useState(null);
+
     return (
-        <div>
-            <h2>
-                Results
-            </h2>
-            <img src="./src/assets/250x250.png"/>
+        <>
+            <div>
+                <h2>
+                    Results
+                </h2>
+                <img src="./src/assets/250x250.png"/>
 
-            <img src="./src/assets/250x250.png"/>
-                
-            <img src="./src/assets/250x250.png"/>
-            {results != null ?(
-                <table>
-                    <thead class="text-left bg-slate-50">
-                        <tr>
-                            <td>Pos</td>
-                            <td></td>
-                            <td></td>
-                            <td>Laps</td>
-                            <td>Pts</td>
+                <img src="./src/assets/250x250.png"/>
+                    
+                <img src="./src/assets/250x250.png"/>
+                {results != null ?(
+                    <table>
+                        <thead class="text-left bg-slate-50">
+                            <tr>
+                                <td>Pos</td>
+                                <td></td>
+                                <td></td>
+                                <td>Laps</td>
+                                <td>Pts</td>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {results.sort((a,b) => a.position - b.position).map( (r,indx) => <ResultsTableItem
-                                result={r} key={indx}/>)}
-                    </tbody>
-                </table>
-            ):(
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {results.sort((a,b) => a.position - b.position).map( (r,indx) => <ResultsTableItem
+                                    result={r} key={indx} fillDriverRef={fillDriverRef}/>)}
+                        </tbody>
+                    </table>
+                ):(
+                    <></>
+                )}
+            </div>
+            {driverRef != null ?(
+                <DriverView driverRef={driverRef} fillDriverRef={fillDriverRef}/>
+            ) : (
                 <></>
             )}
-        </div>
+        </>
     )
 }
 export default ResultsTable;

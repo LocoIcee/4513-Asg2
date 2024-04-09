@@ -5,7 +5,7 @@ const ResultsTableItem = (props) => {
                 {props.result.position}
             </td>
             <td>
-                {props.result.drivers.forename} {props.result.drivers.surname}
+                <a onClick={() => props.fillDriverRef(props.result.drivers.driverRef)}>{props.result.drivers.forename} {props.result.drivers.surname}</a>
             </td>
             <td>
                 {props.result.constructors.name}

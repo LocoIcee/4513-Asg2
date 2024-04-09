@@ -18,7 +18,7 @@ const DriverView = (props) => {
                 return resp.json();
             })
             .then( data => { 
-                fillDriver(data);})
+                fillDriver(data[0]);})
             .catch(error => {
                 
                  console.error('Error fetching Driver:', error);
@@ -41,7 +41,8 @@ const DriverView = (props) => {
                         {driver.forename} {driver.surname}, {driver.dob}, 
                         {driver.nationality}, {driver.url}
                     </h3>
-                    <button class="mx-2 px-2 rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500">
+                    <button class="mx-2 px-2 rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500"
+                            onClick={() => props.fillDriverRef(null)}>
                         close
                     </button>
                     <button class="px-2 rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500">

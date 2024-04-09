@@ -64,7 +64,7 @@ const QualifyingTable = (props) => {
                 
             </div>
             {driverRef != null ?(
-                <DriverView driverRef={driverRef}/>
+                <DriverView driverRef={driverRef} fillDriverRef={fillDriverRef}/>
             ) : (
                 <></>
             )}
