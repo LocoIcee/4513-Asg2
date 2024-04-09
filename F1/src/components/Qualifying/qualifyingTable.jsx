@@ -20,7 +20,7 @@ const QualifyingTable = (props) => {
                 return resp.json();
             })
             .then( data => { 
-                props.fillQualify(data);})
+                fillQualify(data);})
             .catch(error => {
                 
                  console.error('Error fetching qualifying:', error);

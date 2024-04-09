@@ -19,7 +19,7 @@ const CircuitView = (props) => {
                 return resp.json();
             })
             .then( data => { 
-                props.fillCircuit(data);})
+                fillCircuit(data);})
             .catch(error => {
                 
                  console.error('Error fetching circuit:', error);
