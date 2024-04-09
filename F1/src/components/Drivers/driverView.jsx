@@ -35,7 +35,7 @@ const DriverView = (props) => {
             {driver != null ? (
                 <dialog class="top-80 left-30 fixed z-50 flex flex-col w-12 sm:w-5/6 lg:w-1/2  mx-auto rounded-lg border border-gray-300 shadow-xl">
                     <div class="flex flex-row justify-between p-6 bg-white border-b border-gray-200 rounded-tl-lg rounded-tr-lg">
-                    <h2>
+                    <h2 class="font-bold">
                         Driver Details
                     </h2>
                     <h3>
