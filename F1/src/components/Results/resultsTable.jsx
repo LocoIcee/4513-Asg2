@@ -20,7 +20,7 @@ const ResultsTable = (props) => {
                 return resp.json();
             })
             .then( data => { 
-                props.fillResults(data);})
+                fillResults(data);})
             .catch(error => {
                 
                  console.error('Error fetching results:', error);
