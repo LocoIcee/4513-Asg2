@@ -1,6 +1,6 @@
 const RacesTableItem = (props) => {
     return (
-        <tr class="odd:bg-white even:bg-gray-700">
+        <tr class="odd:bg-white even:bg-slate-50">
             <td>
                 {props.race.round}
             </td>

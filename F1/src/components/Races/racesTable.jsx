@@ -3,8 +3,8 @@ import RacesTableItem from './racesTableItem'
 const RacesTable = (props) => {
     return (
         <div>
-            <table class="text-left bg-gray-700">
-                <thead>
+            <table >
+                <thead class="text-left bg-slate-50">
                     <tr>
                         <th>Rnd</th>
                         <th>Circuit</th>

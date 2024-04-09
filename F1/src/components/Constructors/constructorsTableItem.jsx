@@ -1,6 +1,6 @@
 const ConstructorsTableItem = (props) => {
     return (
-        <tr>
+        <tr class="odd:bg-white even:bg-slate-50">
             <td>
                 {props.constructor.position}
             </td>

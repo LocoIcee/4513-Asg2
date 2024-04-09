@@ -44,7 +44,7 @@ const ResultsTable = (props) => {
             <img src="image for 3rd"/>
             {results != null ?(
                 <table>
-                    <thead>
+                    <thead class="text-left bg-slate-50">
                         <tr>
                             <td>Pos</td>
                             <td></td>

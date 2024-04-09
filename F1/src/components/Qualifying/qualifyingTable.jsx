@@ -39,7 +39,7 @@ const QualifyingTable = (props) => {
             </h2>
             {qualifying != null ? (
                 <table>
-                    <thead>
+                    <thead class="text-left bg-slate-50"> 
                         <tr>
                             <th>Pos</th>
                             <th></th>

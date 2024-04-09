@@ -39,7 +39,7 @@ const ConstructorsTable = (props) => {
             </h2>
             {constructors != null ? (
                 <table>
-                    <thead>
+                    <thead class="text-left bg-slate-50">
                         <tr>
                             <th>Pos</th>
                             <th></th>

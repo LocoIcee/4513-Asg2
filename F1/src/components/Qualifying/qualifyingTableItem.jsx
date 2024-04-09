@@ -1,6 +1,6 @@
 const QualifyingTableItem = (props) => {
     return (
-        <tr>
+        <tr class="odd:bg-white even:bg-slate-50">
             <td>
                 {props.qualify.position}
             </td>
