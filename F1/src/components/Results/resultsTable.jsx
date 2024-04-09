@@ -41,13 +41,13 @@ const ResultsTable = (props) => {
                 <h2>
                     Results
                 </h2>
-                <img src="./src/assets/250x250.png"/>
+                <img class="float-left" src="./src/assets/250x250.png"/>
 
-                <img src="./src/assets/250x250.png"/>
+                <img class="float-left" src="./src/assets/250x250.png"/>
                     
-                <img src="./src/assets/250x250.png"/>
+                <img class="relative" src="./src/assets/250x250.png"/>
                 {results != null ?(
-                    <table>
+                    <table class="">
                         <thead class="text-left bg-slate-50">
                             <tr>
                                 <td>Pos</td>
@@ -56,15 +56,15 @@ const ResultsTable = (props) => {
                                 <td>Laps</td>
                                 <td>Pts</td>
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {results.sort((a,b) => a.position - b.position).map( (r,indx) => <ResultsTableItem
-                                    result={r} key={indx} fillDriverRef={fillDriverRef}/>)}
-                        </tbody>
-                    </table>
-                ):(
-                    <></>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {results.sort((a,b) => a.position - b.position).map( (r,indx) => <ResultsTableItem
+                                        result={r} key={indx} fillDriverRef={fillDriverRef}/>)}
+                            </tbody>
+                        </table>
+                    ):(
+                        <></>
                 )}
             </div>
             {driverRef != null ?(
