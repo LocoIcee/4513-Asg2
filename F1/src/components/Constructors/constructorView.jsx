@@ -41,10 +41,10 @@ const ConstructorView = (props) => {
                         {constructor.name}, {constructor.nationality}, 
                         {constructor.url}
                     </h3>
-                    <button>
+                    <button class="rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500">
                         close
                     </button>
-                    <button>
+                    <button class="rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500">
                         Add Favorites
                     </button>
                     <img src="driver image"/>
