@@ -18,7 +18,7 @@ const CircuitView = (props) => {
                             <button>
                                 Add Favorites
                             </button>
-                            <img src="cirtuit image"/>
+                            <img src="assets/600x600.png"/>
                             /* Map leaflet react compontent*/
                         </div>
                     </div>

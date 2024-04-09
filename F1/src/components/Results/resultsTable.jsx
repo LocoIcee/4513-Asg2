@@ -37,11 +37,11 @@ const ResultsTable = (props) => {
             <h2>
                 Results
             </h2>
-            <img src="image for 1st"/>
+            <img src="/assets/600x600.png"/>
 
-            <img src="image for 2nd"/>
+            <img src="/assets/600x600.png"/>
                 
-            <img src="image for 3rd"/>
+            <img src="/assets/600x600.png"/>
             {results != null ?(
                 <table>
                     <thead class="text-left bg-slate-50">

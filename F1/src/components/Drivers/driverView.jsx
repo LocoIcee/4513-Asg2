@@ -49,7 +49,7 @@ const DriverView = (props) => {
                     <button class="rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500">
                         Add Favorites
                     </button>
-                    <img src="driver image"/>
+                    <img src="assets/600x600.png"/>
                 </div>
             ) : (
                 <></>
