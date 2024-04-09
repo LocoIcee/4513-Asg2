@@ -12,8 +12,8 @@ const ResultsView = (props) =>{
     const [viewCircuit, triggerCircuit] = useState(false);
 
     useEffect(() => {
-        if (props.race.circuitId != null){
-            const url = `https://four513-asg1.onrender.com/api/circuits/${props.race.circuitId}`;
+        if (props.race.circuitRef != null){
+            const url = `https://four513-asg1.onrender.com/api/circuits/${props.race.circuitRef}`;
             console.log("fetching circuit");
             fetch (url)
             .then( resp => {
@@ -36,7 +36,7 @@ const ResultsView = (props) =>{
                  }
             }); 
         }
-    }, [props.race.circuitId]);
+    }, [props.race.circuitRef]);
 
     return (
         <>
