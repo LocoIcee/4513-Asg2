@@ -34,7 +34,7 @@ const DriverView = (props) => {
 
     return(
         <>
-            {driver != null & props.circuit != null ? (
+            {driver != null ? (
                 <div>
                     <h2>
                         Driver Details

@@ -39,18 +39,23 @@ const ResultsView = (props) =>{
     }, [props.race.circuitId]);
 
     return (
-        <div>
-            <h2>
-                Results
-            </h2>
-            <h3>
-                {props.race.name}, Round #{props.race.round}, {props.race.year}, <a href={() => triggerCircuit(true)}>{circuit.name}</a>, {props.race.date}, {props.race.url}
-            </h3>
-            <QualifyingTable raceId={props.race.raceId}/>
-            <ResultsTable raceId={props.race.raceId}/>
-            <CircuitView viewCircuit={viewCircuit} triggerCircuit={triggerCircuit}/>
-        </div>
-
+        <>
+            {circuit != null ?(
+            <div>
+                <h2>
+                    Results
+                </h2>
+                <h3>
+                    {props.race.name}, Round #{props.race.round}, {props.race.year}, <a href={() => triggerCircuit(true)}>{circuit.name}</a>, {props.race.date}, {props.race.url}
+                </h3>
+                <QualifyingTable raceId={props.race.raceId}/>
+                <ResultsTable raceId={props.race.raceId}/>
+                <CircuitView viewCircuit={viewCircuit} triggerCircuit={triggerCircuit}/>
+            </div>
+            ):(
+                <></>
+            )}
+        </>
     )
 }
 export default ResultsView;
