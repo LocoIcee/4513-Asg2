@@ -37,20 +37,22 @@ const Header = (props) => {
 
     return (
             <div className="header">
+                {/*
+                 <h2>
+                    Header Title
+                </h2>*/}
                 <select onChange={yearChange}>
                     <option>
-                        Selector
+                        Year
                     </option>
                     {years.map((y) => fillSelector(y))}
 
                 </select>
-                <h2>
-                    Header Title
-                </h2>
-                <button>
+               
+                <button class="rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500">
                     Favorites
                 </button>
-                <button>
+                <button class="rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500">
                     About
                 </button>
             </div>

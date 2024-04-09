@@ -35,12 +35,12 @@ const PageView = (props) => {
 
 
     return (
-        <div>
-            <h2> 
-                Application Name
+        <div class=" bg-[url('assets/LoginBack1.jpg')] bg-no-repeat bg-cover h-screen ">
+            <h2 class="text-stone-50 font-bold font-mont text-2xl"> 
+                F1 Stats
             </h2>
             {login ? (
-                <div>
+                <div class="bg-slate-50 h-screen">
                     <Header seasonData={fillRaces}/>
                     {viewRaces ? (
                         <div>
@@ -68,7 +68,7 @@ const PageView = (props) => {
             ) : (
                 <LoginView doLogin={loginSuccess}/>
             )}
-            
+           
         </div>
     )
 }

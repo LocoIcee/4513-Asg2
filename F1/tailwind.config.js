@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 /**Default theme source: https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/config.full.js */
 module.exports = {
+  
   content: ["./index.html",
   "./src/**/*.{js,ts,jsx,tsx}"],
   presets: [],
