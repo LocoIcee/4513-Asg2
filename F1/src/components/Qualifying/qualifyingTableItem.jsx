@@ -8,7 +8,7 @@ const QualifyingTableItem = (props) => {
                 <a onClick={() => props.fillDriverRef(props.qualify.drivers.driverRef)}>{props.qualify.drivers.forename} {props.qualify.drivers.surname}</a>
             </td>
             <td>
-                {props.qualify.constructors.name}
+                <a onClick={() => props.fillConstructorRef(props.qualify.constructors.constructorRef)}>{props.qualify.constructors.name}</a>
             </td>
             <td>
                 {props.qualify.q1}

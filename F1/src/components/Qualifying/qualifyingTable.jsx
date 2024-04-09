@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import QualifyingTableItem from './qualifyingTableItem';
 import DriverView from '../Drivers/driverView';
+import ConstructorView from '../Constructors/constructorView';
 
 const QualifyingTable = (props) => {
 
@@ -34,6 +35,7 @@ const QualifyingTable = (props) => {
     }, [props.raceId]);
 
     const [driverRef, fillDriverRef] = useState(null);
+    const [constructorRef, fillConstructorRef] = useState(null);
 
     return (
         <>
@@ -55,7 +57,7 @@ const QualifyingTable = (props) => {
                         </thead>
                         <tbody>
                             {qualifying.sort((a,b) => a.position - b.position).map( (q,indx) => <QualifyingTableItem
-                            qualify={q} key={indx} fillDriverRef={fillDriverRef}/>)}
+                            qualify={q} key={indx} fillDriverRef={fillDriverRef} fillConstructorRef={fillConstructorRef}/>)}
                         </tbody>
                     </table>
                 ) : (
@@ -68,6 +70,12 @@ const QualifyingTable = (props) => {
             ) : (
                 <></>
             )}
+            {constructorRef != null?(
+                <ConstructorView constructorRef={constructorRef} fillConstructorRef={fillConstructorRef}/>
+            ):(
+                <></>
+            )
+            }
         </>
     )
 }

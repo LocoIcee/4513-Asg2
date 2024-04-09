@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import ConstructorsTableItem from './constructorsTableItem';
+import ConstructorView from '../Constructors/constructorView';
 
 const ConstructorsTable = (props) => {
 
@@ -32,30 +33,40 @@ const ConstructorsTable = (props) => {
         }
     }, [props.raceId]);
 
+    const [constructorRef, fillConstructorRef] = useState(null);
+
     return (
-        <div>
-            <h2>
-                Constructors
-            </h2>
-            {constructors != null ? (
-                <table>
-                    <thead class="text-left bg-slate-50">
-                        <tr>
-                            <th>Pos</th>
-                            <th></th>
-                            <th>Pts</th>
-                            <th>Wins</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {constructors.sort((a,b) => a.position - b.position).map( (c,indx) => <ConstructorsTableItem
-                        constructor={c} key={indx}/>)}
-                    </tbody>
-                </table>
-            ) : (
+        <>
+            <div>
+                <h2>
+                    Constructors
+                </h2>
+                {constructors != null ? (
+                    <table>
+                        <thead class="text-left bg-slate-50">
+                            <tr>
+                                <th>Pos</th>
+                                <th></th>
+                                <th>Pts</th>
+                                <th>Wins</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {constructors.sort((a,b) => a.position - b.position).map( (c,indx) => <ConstructorsTableItem
+                            constructor={c} key={indx} fillConstructorRef={fillConstructorRef}/>)}
+                        </tbody>
+                    </table>
+                ) : (
+                    <></>
+                )}
+            </div>
+            {constructorRef != null?(
+                <ConstructorView constructorRef={constructorRef} fillConstructorRef={fillConstructorRef}/>
+            ):(
                 <></>
-            )}
-        </div>
+            )
+            }
+        </>
     )
 }
 export default ConstructorsTable;

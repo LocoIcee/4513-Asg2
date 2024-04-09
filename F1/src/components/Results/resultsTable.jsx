@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import ResultsTableItem from './resultsTableItem';
 import DriverView from '../Drivers/driverView';
+import ConstructorView from '../Constructors/constructorView';
 
 const ResultsTable = (props) => {
 
@@ -34,6 +35,7 @@ const ResultsTable = (props) => {
     }, [props.raceId]);
 
     const [driverRef, fillDriverRef] = useState(null);
+    const [constructorRef, fillConstructorRef] = useState(null);
 
     return (
         <>
@@ -60,7 +62,7 @@ const ResultsTable = (props) => {
                             </thead>
                             <tbody>
                                 {results.sort((a,b) => a.position - b.position).map( (r,indx) => <ResultsTableItem
-                                        result={r} key={indx} fillDriverRef={fillDriverRef}/>)}
+                                        result={r} key={indx} fillDriverRef={fillDriverRef} fillConstructorRef={fillConstructorRef}/>)}
                             </tbody>
                         </table>
                     ):(
@@ -72,6 +74,12 @@ const ResultsTable = (props) => {
             ) : (
                 <></>
             )}
+            {constructorRef != null?(
+                <ConstructorView constructorRef={constructorRef} fillConstructorRef={fillConstructorRef}/>
+            ):(
+                <></>
+            )
+            }
         </>
     )
 }

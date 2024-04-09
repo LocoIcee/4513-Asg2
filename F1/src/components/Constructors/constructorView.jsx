@@ -4,9 +4,9 @@ const ConstructorView = (props) => {
     const [constructor, fillConstructor] = useState(null);
 
     useEffect(() => {
-        if (props.ConstructorRef != null){
-            const url = `https://four513-asg1.onrender.com/api/drivers/${props.ConstructorRef}`;
-            console.log("fetching driver");
+        if (props.constructorRef != null){
+            const url = `https://four513-asg1.onrender.com/api/constructors/${props.constructorRef}`;
+            console.log("fetching constructor");
             fetch (url)
             .then( resp => {
                 if (resp.status === 404) {
@@ -18,7 +18,7 @@ const ConstructorView = (props) => {
                 return resp.json();
             })
             .then( data => { 
-                fillConstructor(data);})
+                fillConstructor(data[0])})
             .catch(error => {
                 
                  console.error('Error fetching constructor:', error);
@@ -28,7 +28,7 @@ const ConstructorView = (props) => {
                  }
             }); 
         }
-    }, [props.driverRef]);
+    }, [props.constructorRef]);
 
     return(
         <>
@@ -41,7 +41,8 @@ const ConstructorView = (props) => {
                         {constructor.name}, {constructor.nationality}, 
                         {constructor.url}
                     </h3>
-                    <button class="mx-2 px-2 rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500">
+                    <button class="mx-2 px-2 rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500"
+                        onClick={() => props.fillConstructorRef(null)}>
                         close
                     </button>
                     <button class="rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500">
