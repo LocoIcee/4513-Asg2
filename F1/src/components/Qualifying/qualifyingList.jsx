@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import QualifyingListItem from './qualifyingListItem';
 
 const QualifyingList = (props) => {
@@ -20,10 +20,13 @@ const QualifyingList = (props) => {
             <h2>
                 Qualifying
             </h2>
-            <ol>
-                {qualifying.map( (q,indx) => <QualifyingListItem
-                qualify={q} key={indx}/>)}
-            </ol>
+            {qualifying != null ? (
+                <ol>
+                    {qualifying.map( (q,indx) => <QualifyingListItem
+                    qualify={q} key={indx}/>)}
+                </ol>) : (
+                    <></>
+                )}
         </div>
     )
 }

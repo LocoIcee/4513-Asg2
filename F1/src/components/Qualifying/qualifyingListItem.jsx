@@ -2,9 +2,6 @@ const QualifyingListItem = (props) => {
     return (
         <li>
             <p>
-                {props.qualify.position}
-            </p>
-            <p>
                 {props.qualify.drivers.forname} {props.qualify.drivers.surname}
             </p>
             <p>
