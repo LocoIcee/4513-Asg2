@@ -23,10 +23,10 @@ const DriversTable = (props) => {
                 fillDrivers(data);})
             .catch(error => {
                 
-                 console.error('Error fetching season:', error);
+                 console.error('Error fetching drivers:', error);
                  
                  if (error.message === '404 Not Found') {
-                     console.log('Season data not found');
+                     console.log('Drivers data not found');
                  }
             });
         }

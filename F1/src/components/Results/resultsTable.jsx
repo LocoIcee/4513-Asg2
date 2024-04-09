@@ -23,7 +23,7 @@ const ResultsTable = (props) => {
                 props.fillResults(data);})
             .catch(error => {
                 
-                 console.error('Error fetching season:', error);
+                 console.error('Error fetching results:', error);
                  
                  if (error.message === '404 Not Found') {
                      console.log('Results data not found');

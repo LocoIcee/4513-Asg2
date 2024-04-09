@@ -23,10 +23,10 @@ const QualifyingTable = (props) => {
                 props.fillQualify(data);})
             .catch(error => {
                 
-                 console.error('Error fetching season:', error);
+                 console.error('Error fetching qualifying:', error);
                  
                  if (error.message === '404 Not Found') {
-                     console.log('Season data not found');
+                     console.log('Qualifying data not found');
                  }
             });
         }
