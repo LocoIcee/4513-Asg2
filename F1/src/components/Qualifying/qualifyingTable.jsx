@@ -10,10 +10,24 @@ const QualifyingTable = (props) => {
             const url = `https://four513-asg1.onrender.com/api/qualifying/${props.raceId}`;
             console.log("fetching qualifying");
             fetch (url)
-            .then( resp => resp.json() )
-            .then( data => { fillQualify(data);}) 
+            .then( resp => {
+                if (resp.status === 404) {
+                    throw new Error('404 Not Found');
+                }
+                if (!resp.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return resp.json();
+            })
+            .then( data => { 
+                props.fillQualify(data);})
             .catch(error => {
-                console.error('Error fetching qualifying:', error);
+                
+                 console.error('Error fetching season:', error);
+                 
+                 if (error.message === '404 Not Found') {
+                     console.log('Season data not found');
+                 }
             });
         }
     }, [props.raceId]);

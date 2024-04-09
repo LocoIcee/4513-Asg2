@@ -9,10 +9,24 @@ const CircuitView = (props) => {
             const url = `https://four513-asg1.onrender.com/api/circuits/${props.circuitRef}`;
             console.log("fetching circuit");
             fetch (url)
-            .then( resp => resp.json() )
-            .then( data => { fillCircuit(data);})
+            .then( resp => {
+                if (resp.status === 404) {
+                    throw new Error('404 Not Found');
+                }
+                if (!resp.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return resp.json();
+            })
+            .then( data => { 
+                props.fillCircuit(data);})
             .catch(error => {
-                console.error('Error fetching circuit:', error);
+                
+                 console.error('Error fetching season:', error);
+                 
+                 if (error.message === '404 Not Found') {
+                     console.log('Season data not found');
+                 }
             }); 
         }
     }, [props.circuitRef]);
