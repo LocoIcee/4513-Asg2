@@ -1,54 +1,27 @@
-import { useEffect, useState } from 'react';
-
 const CircuitView = (props) => {
-
-    const [circuit, fillCircuit] = useState(null);
-
-    useEffect(() => {
-        if (props.circuitRef != null){
-            const url = `https://four513-asg1.onrender.com/api/circuits/${props.circuitRef}`;
-            console.log("fetching circuit");
-            fetch (url)
-            .then( resp => {
-                if (resp.status === 404) {
-                    throw new Error('404 Not Found');
-                }
-                if (!resp.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return resp.json();
-            })
-            .then( data => { 
-                fillCircuit(data);})
-            .catch(error => {
-                
-                 console.error('Error fetching circuit:', error);
-                 
-                 if (error.message === '404 Not Found') {
-                     console.log('Circuit data not found');
-                 }
-            }); 
-        }
-    }, [props.circuitRef]);
 
     return(
         <>
-            {circuit != null ? (
-                <div>
-                    <h2>
-                        Circuit Details
-                    </h2>
-                    <h3>
-                        {circuit.name}, {circuit.location}, {circuit.country}, {circuit.url}
-                    </h3>
-                    <button>
-                        close
-                    </button>
-                    <button>
-                        Add Favorites
-                    </button>
-                    <img src="cirtuit image"/>
-                    /* Map leaflet react compontent*/
+            {circuit != null & props.viewCircuit ? (
+                <div class="flex justify-center h-screen items-center bg-gray-200 antialiased">
+                    <div class="flex flex-col w-11/12 sm:w-5/6 lg:w-1/2 max-w-2xl mx-auto rounded-lg border border-gray-300 shadow-xl">
+                        <div class="flex flex-row justify-between p-6 bg-white border-b border-gray-200 rounded-tl-lg rounded-tr-lg">
+                            <h2>
+                                Circuit Details
+                            </h2>
+                            <h3>
+                                {props.circuit.name}, {props.circuit.location}, {props.circuit.country}, {props.circuit.url}
+                            </h3>
+                            <button onClick={() => props.triggerCircuit(false)}>
+                                close
+                            </button>
+                            <button>
+                                Add Favorites
+                            </button>
+                            <img src="cirtuit image"/>
+                            /* Map leaflet react compontent*/
+                        </div>
+                    </div>
                 </div>
             ) : (
                 <></>
