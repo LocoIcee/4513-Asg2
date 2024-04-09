@@ -8,10 +8,10 @@ const FavoritesView = (props) => {
             <h2>
                 Favorites
             </h2>
-            <button class="rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500">
+            <button class="mx-2 px-2 rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500">
                 Empty Favorites
             </button>
-            <button class="rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500">
+            <button class="px-2 rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500">
                 Close
             </button>
             <table>

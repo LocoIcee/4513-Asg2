@@ -41,7 +41,7 @@ const ConstructorView = (props) => {
                         {constructor.name}, {constructor.nationality}, 
                         {constructor.url}
                     </h3>
-                    <button class="rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500">
+                    <button class="mx-2 px-2 rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500">
                         close
                     </button>
                     <button class="rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500">

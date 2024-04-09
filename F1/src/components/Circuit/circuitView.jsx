@@ -12,10 +12,10 @@ const CircuitView = (props) => {
                             <h3>
                                 {props.circuit.name}, {props.circuit.location}, {props.circuit.country}, {props.circuit.url}
                             </h3>
-                            <button onClick={() => props.triggerCircuit(false)}>
+                            <button class="mx-2 px-2 rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500" onClick={() => props.triggerCircuit(false)}>
                                 close
                             </button>
-                            <button>
+                            <button class="px-2 rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500">
                                 Add Favorites
                             </button>
                             <img src="assets/600x600.png"/>

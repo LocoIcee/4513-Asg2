@@ -63,10 +63,10 @@ const Header = (props) => {
 
                 </select>
                
-                <button class="rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500">
+                <button class="mx-2 px-2 rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500">
                     Favorites
                 </button>
-                <button class="rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500">
+                <button class="px-2 rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500">
                     About
                 </button>
             </div>
