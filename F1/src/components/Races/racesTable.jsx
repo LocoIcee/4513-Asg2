@@ -3,7 +3,7 @@ import RacesTableItem from './racesTableItem'
 const RacesTable = (props) => {
     return (
         <div>
-            <table>
+            <table class="text-left bg-gray-700">
                 <thead>
                     <tr>
                         <th>Rnd</th>
