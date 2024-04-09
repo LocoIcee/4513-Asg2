@@ -47,7 +47,7 @@ const ConstructorView = (props) => {
                     <button class="rounded-none border-black border-2 bg-slate-50 hover:bg-slate-500">
                         Add Favorites
                     </button>
-                    <img src="/assets/600x600.png"/>
+                    <img src="/assets/250x250.png"/>
                 </div>
             ) : (
                 <></>

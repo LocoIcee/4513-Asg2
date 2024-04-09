@@ -48,7 +48,7 @@ const ResultsView = (props) =>{
                         Results
                     </h2>
                     <h3>
-                        {props.race.name}, Round #{props.race.round}, {props.race.year}, <a onClick={() => triggerCircuit(true)}>{circuit.name}</a>, {props.race.date}, {props.race.url}
+                        {props.race.name}, Round #{props.race.round}, {props.race.year}, <a class="text-blue-700 hover:underline" onClick={() => triggerCircuit(true)}>{circuit.name}</a>, {props.race.date}, {props.race.url}
                     </h3>
                     <CircuitView circuit={circuit} viewCircuit={viewCircuit} triggerCircuit={triggerCircuit}/>
                     <QualifyingTable raceId={props.race.raceId}/>

@@ -40,7 +40,7 @@ const PageView = (props) => {
                 F1 Stats
             </h2>
             {login ? (
-                <div class="bg-slate-50 h-dvh">
+                <div class="bg-slate-50 h-screen">
                     <Header seasonData={fillRaces}/>
                     {viewRaces ? (
                         <div>
