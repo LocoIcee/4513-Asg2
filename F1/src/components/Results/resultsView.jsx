@@ -12,8 +12,8 @@ const ResultsView = (props) =>{
     const [viewCircuit, triggerCircuit] = useState(false);
 
     useEffect(() => {
-        if (props.race.circuitRef != null){
-            const url = `https://four513-asg1.onrender.com/api/circuits/${props.race.circuitRef}`;
+        if (props.race != null){
+            const url = `https://four513-asg1.onrender.com/api/circuits/season/${props.race.year}`;
             console.log("fetching circuit");
             fetch (url)
             .then( resp => {
@@ -26,7 +26,8 @@ const ResultsView = (props) =>{
                 return resp.json();
             })
             .then( data => { 
-                fillCircuit(data);})
+                const cir = data.find( ({circuits}) => circuits.circuitId === props.race.circuitId);
+                fillCircuit(cir.circuits)})
             .catch(error => {
                 
                  console.error('Error fetching circuit:', error);
@@ -34,27 +35,29 @@ const ResultsView = (props) =>{
                  if (error.message === '404 Not Found') {
                      console.log('Circuit data not found');
                  }
-            }); 
+            });
+            console.log(circuit);
         }
-    }, [props.race.circuitRef]);
+    }, [props.race]);
 
     return (
         <>
             {circuit != null ?(
-            <div>
-                <h2>
-                    Results
-                </h2>
-                <h3>
-                    {props.race.name}, Round #{props.race.round}, {props.race.year}, <a href={() => triggerCircuit(true)}>{circuit.name}</a>, {props.race.date}, {props.race.url}
-                </h3>
-                <QualifyingTable raceId={props.race.raceId}/>
-                <ResultsTable raceId={props.race.raceId}/>
-                <CircuitView viewCircuit={viewCircuit} triggerCircuit={triggerCircuit}/>
-            </div>
-            ):(
-                <></>
-            )}
+                <div>
+                    <h2>
+                        Results
+                    </h2>
+                    <h3>
+                        {props.race.name}, Round #{props.race.round}, {props.race.year}, <a onClick={() => triggerCircuit(true)}>{circuit.name}</a>, {props.race.date}, {props.race.url}
+                    </h3>
+                    <CircuitView circuit={circuit} viewCircuit={viewCircuit} triggerCircuit={triggerCircuit}/>
+                    <QualifyingTable raceId={props.race.raceId}/>
+                    <ResultsTable raceId={props.race.raceId}/>
+                    
+                </div>
+                ):(
+                    <></>
+                )}
         </>
     )
 }
