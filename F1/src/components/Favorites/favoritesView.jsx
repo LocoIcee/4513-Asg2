@@ -14,9 +14,15 @@ const FavoritesView = (props) => {
             <button>
                 Close
             </button>
-            <FavoriteDriversList/>
-            <FavoriteConstructorsList/>
-            <FavoriteCircuitsList/>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><FavoriteDriversList/></td>
+                        <td><FavoriteConstructorsList/></td>
+                        <td><FavoriteCircuitsList/></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     )
 }
