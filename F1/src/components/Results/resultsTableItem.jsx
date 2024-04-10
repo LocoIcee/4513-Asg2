@@ -5,10 +5,10 @@ const ResultsTableItem = (props) => {
                 {props.result.position}
             </td>
             <td>
-                <a onClick={() => props.fillDriverRef(props.result.drivers.driverRef)}>{props.result.drivers.forename} {props.result.drivers.surname}</a>
+                <a class="text-blue-700 hover:underline" onClick={() => props.fillDriverRef(props.result.drivers.driverRef)}>{props.result.drivers.forename} {props.result.drivers.surname}</a>
             </td>
             <td>
-                <a onClick={() => props.fillConstructorRef(props.result.constructors.constructorRef)}>{props.result.constructors.name}</a>
+                <a class="text-blue-700 hover:underline" onClick={() => props.fillConstructorRef(props.result.constructors.constructorRef)}>{props.result.constructors.name}</a>
             </td>
             <td>
                 {props.result.laps}

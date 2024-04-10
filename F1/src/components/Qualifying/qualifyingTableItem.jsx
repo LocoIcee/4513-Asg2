@@ -5,10 +5,10 @@ const QualifyingTableItem = (props) => {
                 {props.qualify.position}
             </td>
             <td>
-                <a onClick={() => props.fillDriverRef(props.qualify.drivers.driverRef)}>{props.qualify.drivers.forename} {props.qualify.drivers.surname}</a>
+                <a class="text-blue-700 hover:underline" onClick={() => props.fillDriverRef(props.qualify.drivers.driverRef)}>{props.qualify.drivers.forename} {props.qualify.drivers.surname}</a>
             </td>
             <td>
-                <a onClick={() => props.fillConstructorRef(props.qualify.constructors.constructorRef)}>{props.qualify.constructors.name}</a>
+                <a class="text-blue-700 hover:underline" onClick={() => props.fillConstructorRef(props.qualify.constructors.constructorRef)}>{props.qualify.constructors.name}</a>
             </td>
             <td>
                 {props.qualify.q1}

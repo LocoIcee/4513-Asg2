@@ -5,7 +5,7 @@ const ConstructorsTableItem = (props) => {
                 {props.constructor.position}
             </td>
             <td>
-                <a onClick={() => props.fillConstructorRef(props.constructor.constructors.constructorRef)}>{props.constructor.constructors.name}</a>
+                <a class="text-blue-700 hover:underline" onClick={() => props.fillConstructorRef(props.constructor.constructors.constructorRef)}>{props.constructor.constructors.name}</a>
             </td>
             <td>
                 {props.constructor.points}
