@@ -1,7 +1,7 @@
 const FavoriteDriversListItem = (props) => {
     return(
         <li>
-            Drivers name
+            Constructor name
         </li>
     )
 }
