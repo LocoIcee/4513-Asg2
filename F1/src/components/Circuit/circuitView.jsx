@@ -19,7 +19,7 @@ const CircuitView = (props) => {
                             </button>
                             
                         </div>
-                        <img class="b-white  w-40 h-40" src="./src/assets/250x250.png"/>
+                        <img class="b-white  w-40 h-40" src="./assets/250x250.png"/>
                     </dialog>
             ) : (
                 <></>
