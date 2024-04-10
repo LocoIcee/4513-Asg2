@@ -58,10 +58,6 @@ const PageView = (props) => {
                         <></>
                     )}
                     
-                    
-                    <CircuitView/>
-                    <DriverView/>
-                    <ConstructorView/>
                     <FavoritesView/>
                 </div>
                 
