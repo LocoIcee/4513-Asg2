@@ -35,7 +35,7 @@ const PageView = (props) => {
 
 
     return (
-        <div class=" bg-[url('./assets/LoginBack1.jpg')] bg-no-repeat bg-cover h-screen ">
+        <div class=" bg-[url('/assets/LoginBack1.jpg')] bg-no-repeat bg-cover h-screen ">
             <h2 class="text-stone-50 font-bold font-mont text-2xl"> 
                 F1 Stats
             </h2>
