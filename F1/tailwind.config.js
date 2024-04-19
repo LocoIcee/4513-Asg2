@@ -1062,5 +1062,5 @@ module.exports = {
       50: '50',
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }

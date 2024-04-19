@@ -57,7 +57,7 @@ const Header = (props) => {
                 </h2>*/}
                 <select onChange={yearChange}>
                     <option>
-                        Year
+                        Season
                     </option>
                     {years.map((y) => fillSelector(y))}
 

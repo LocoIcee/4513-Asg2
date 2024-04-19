@@ -35,12 +35,9 @@ const PageView = (props) => {
 
 
     return (
-        <div class=" bg-[url('/assets/LoginBack1.jpg')] bg-no-repeat bg-cover h-screen ">
-            <h2 class="text-stone-50 font-bold font-mont text-2xl"> 
-                F1 Stats
-            </h2>
+        <>
             {login ? (
-                <div class="bg-slate-50 h-screen">
+                <div>
                     <Header seasonData={fillRaces}/>
                     {viewRaces ? (
                         <div>
@@ -62,10 +59,17 @@ const PageView = (props) => {
                 </div>
                 
             ) : (
-                <LoginView doLogin={loginSuccess}/>
+                <div style={{backgroundImage: 'url(/assets/LoginBack.jpg)'}} className="hero min-h-screen">
+                    <div>
+                        <h2 className="text-5xl font-bold text-center text-white my-4"> 
+                            F1 Stats
+                        </h2>
+                        <LoginView doLogin={loginSuccess}/>
+                    </div>
+                    <footer className=" text-xs font-bold sticky top-[100vh]  px-0 py-8">Vecteezy.com</footer>
+                </div>
             )}
-           
-        </div>
+        </>
     )
 }
 export default PageView;
